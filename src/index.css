@@ -5,3 +5,13 @@
     font-weight: 400;
     font-style: medium;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 50% !important;
+}
