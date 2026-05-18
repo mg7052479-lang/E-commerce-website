@@ -15,3 +15,11 @@
     height: 15px !important;
     border-radius: 50% !important;
 }
+
+.text-flow-1{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+}

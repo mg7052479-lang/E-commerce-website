@@ -2,53 +2,32 @@ import React from 'react'
 
 const Trending = () => {
   return (
-    <div className='w-full bg-gray-100 py-10 px-6'>
-      
-      <div className='max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
-        
-        {/* Card */}
-        <div className='bg-white rounded-2xl shadow-md hover:shadow-2xl transition duration-300 overflow-hidden'>
-          
-          {/* Image */}
-          <div className='bg-gray-200 flex justify-center items-center p-6'>
-            <img
-              src="/assets/electronics/boAt Airdopes 201 4.webp"
-              alt="product"
-              className='h-52 object-contain hover:scale-105 transition duration-300'
-            />
-          </div>
+    <div className=' w-full p-4'>
+        <h2 className='mb-4'>Trending Products</h2>
+        <div className='flex border w-106 h-36 shadow rounded-2xl border-gray-50 transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer '>
+          <div className='w-32 h-32 flex items-center justify-center flex-shrink-0 border-gray-50'>
+  <img
+    src="/assets/electronics/boAt Airdopes 111 4.webp"
+    className='cursor-pointer h-32 w-32 p-2 rounded-2xl'
+    alt="ted1"
+  />
+</div>
 
-          {/* Content */}
-          <div className='p-5 flex flex-col gap-3'>
-            
-            <h2 className='text-lg font-semibold text-gray-800'>
-              boAt Airdopes 201
-            </h2>
+           <div  className='p-2 ml-3 mt-3 '>
+            <div  className='flex flex-col gap-2'>
+                <h6 className='text-flow-1' >Lorem, ipsum dolor sit amet 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, non in. Velit quod assumenda facilis autem dignissimos neque repellat eveniet accusantium nulla, laudantium .</h6>
 
-            <p className='text-sm text-gray-500'>
-              Wireless earbuds with immersive sound quality.
-            </p>
-
-            {/* Price */}
-            <div className='flex items-center gap-3'>
-              <span className='text-xl font-bold text-black'>
-                ₹1999
-              </span>
-
-              <span className='text-sm line-through text-gray-400'>
-                ₹2999
-              </span>
             </div>
-
-            {/* Button */}
-            <button className='bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition'>
-              Add To Cart
-            </button>
-
-          </div>
+            <div className='flex gap-4 mt-3'>
+                <p className='flex line-through '>$19.99</p>
+                <p >
+                    <span className='text-green-500 font-bold'>$9.99</span>
+                </p>
+            </div>
+           </div>
         </div>
-
-      </div>
+      
     </div>
   )
 }
