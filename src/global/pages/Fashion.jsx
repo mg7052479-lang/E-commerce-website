@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../../components/Layout'
 
-const fishon = () => {
+const Fashion = () => {
   return (
     <Layout>
       jii my name is ghous
@@ -9,4 +9,4 @@ const fishon = () => {
   )
 }
 
-export default fishon
+export default Fashion

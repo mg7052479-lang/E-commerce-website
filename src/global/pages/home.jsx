@@ -3,7 +3,7 @@ import Layout from "../../components/Layout" ;
 import Carousal from '../../components/carousal';
 import Category from '../../components/category';
 import Trending from '../../components/Trending';
-
+import Listing from '../../components/Listing';
 
 const home = () => {
   return (
@@ -11,6 +11,7 @@ const home = () => {
     <Carousal />
     <Category />
     <Trending />
+    <Listing />
     </Layout>
   )
 };

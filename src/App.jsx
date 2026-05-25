@@ -1,7 +1,7 @@
 import React from 'react'
 import Home from './global/pages/home'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Fishon from './global/pages/fishon'
+import Fashion from './global/pages/Fashion'
 import Electronics from './global/pages/Electronics'
 
 
@@ -10,7 +10,7 @@ const App = () => {
       <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Fishon" element={<Fishon />} />
+        <Route path="/Fashion" element={<Fashion />} />
         <Route path="/Electronics" element={<Electronics />} />
       </Routes>
       </Router>

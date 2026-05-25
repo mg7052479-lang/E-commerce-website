@@ -13,8 +13,7 @@ const Category = () => {
     );
   });
 
-  console.log(uniqueProducts); 
-
+ 
   return (
 
     <div className='flex gap-5  overflow-x-scroll  justify-evenly mt-6 ml-6'>
