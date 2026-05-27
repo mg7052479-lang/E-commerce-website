@@ -613,7 +613,7 @@ export const products = [
   {
     Id: 31,
     Name: "Cargo Brown Jeans",
-    Price: 449,
+    Price: 600,
     Category: "Cargo",
     Image: [
       "/assets/fashion/CargoBrown-1.webp",
