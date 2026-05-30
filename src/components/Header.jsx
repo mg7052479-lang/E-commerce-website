@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <header className='w-full h-20 bg-gradient-to-r from-slate-900 via-gray-900 to-black shadow-lg px-8 flex items-center justify-between'>
+    <header className='w-full fixed top-0 left-0 z-50 h-20 bg-gradient-to-r from-slate-900 via-gray-900 to-black shadow-lg px-8 flex items-center justify-between'>
 
       {/* Logo */}
       <div>
