@@ -1,8 +1,19 @@
 import React from "react";
 import Layout from "../../components/Layout";
 import { products } from "../../data_json.js";
-
+import { useState } from "react";
 const Fashion = () => {
+   const [selectedFilters, setSelectedFilters] = useState([]);
+
+   const handlefliler = (filter)=> {
+    if (seclectedFilters.includes(Category)) {
+      setSelectedFilters(prevFilters => prevFilters.filter(item => item !== Category));
+    } else {
+      setSelectedFilters(prevFilters => [...prevFilters, Category]);
+    } 
+   }
+    
+
   const FashionProducts = products.filter(
     (product) => product.Type === "Fashion"
   );
@@ -10,8 +21,6 @@ const Fashion = () => {
   return (
     <Layout>
       <div className="flex gap-6 p-4">
-
-        {/* Sidebar */}
         <div className="sticky top-24 self-start w-64 border rounded-lg shadow-sm bg-white p-6 h-fit">
           <h2 className="text-lg font-bold bg-gray-600 p-2 text-white rounded text-center">
             Filter
@@ -19,17 +28,20 @@ const Fashion = () => {
 
           <div className="flex flex-col gap-4 mt-3 ml-2 p-2 text-lg">
             <label>
-              <input type="checkbox" className="mr-2" />
+              <input type="checkbox"
+              onChange={()=> handlefliler("Men's Jackets")}
+              className="mr-2" />
               Men's Jackets
             </label>
 
             <label>
-              <input type="checkbox" className="mr-2" />
+              <input type="checkbox" 
+              className="mr-2" />
               Denim Jackets
             </label>
 
             <label>
-              <input type="checkbox" className="mr-2" />
+              <input type="checkbox"  className="mr-2" />
               Regular Jeans
             </label>
 
@@ -71,7 +83,6 @@ const Fashion = () => {
           </div>
         </div>
 
-        {/* Products */}
         <div className="flex flex-wrap justify-evenly gap-6 mt-22 flex-1">
 
           {FashionProducts.map((product) => (
@@ -94,7 +105,7 @@ const Fashion = () => {
               </div>
 
               <h3 className="font-bold text-lg mt-2">
-                {product.Name}
+                {product.Heading}
               </h3>
 
               <div className="flex items-center gap-2 mt-1">

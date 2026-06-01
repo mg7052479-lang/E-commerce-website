@@ -10,7 +10,7 @@ const carousal = () => {
   };
 
   return (
-<div className=" w-full  bg-cover  ">
+<div className=" w-full  bg-cover top-24"> 
             
      <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
