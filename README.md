@@ -4,7 +4,7 @@ A modern and responsive e-commerce web application built using React and Tailwin
 
 ## 🚀 Live Demo
 
-https://your-live-link.vercel.app
+https://shopixvercelapp-shopix-store.vercel.app
 
 ## 📸 Screenshots
 
