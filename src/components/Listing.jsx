@@ -3,8 +3,6 @@ import { products } from "../data_json.js";
 
 const Listing = ( { Productjson , title } ) => {
 
-  console.log(Productjson);
-
   return (
     <div className="w-full p-4">
       <h2 className="text-2xl sm:text-3xl font-bold text-center sm:text-left">

@@ -2,6 +2,8 @@ import React from "react";
 import Layout from "../../components/Layout";
 import { products } from "../../data_json.js";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import SingleProduct from "../../components/SingleProduct.jsx";
 
 const Electronics = () => {
   const [selectedFilters, setSelectedFilters] = useState([]);
@@ -121,7 +123,8 @@ const filteredProducts = ElectronicsProducts.filter((product) => {
         <div className="flex flex-wrap justify-evenly gap-6  flex-1">
           {filteredProducts.map((product, index) => {
             return (
-              <div 
+           <NavLink to={`/products/${product.Id}`} className='text-decoration-none text-black'>
+               <div 
               key={index}
                className="w-72 bg-white  rounded-xl shadow  hover:scale-105 transition-all duration-300 p-4">
                 <img
@@ -137,6 +140,7 @@ const filteredProducts = ElectronicsProducts.filter((product) => {
                   <p className="text-lg text-green-600  ">₹{product.Price}</p>
                 </div>
               </div>
+           </NavLink>
             );
           })}
         </div>
