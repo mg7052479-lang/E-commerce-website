@@ -121,28 +121,30 @@ const filteredProducts = ElectronicsProducts.filter((product) => {
         </div>
 
         <div className="flex flex-wrap justify-evenly gap-6  flex-1">
-          {filteredProducts.map((product, index) => {
-            return (
-           <NavLink to={`/products/${product.Id}`} className='text-decoration-none text-black'>
-               <div 
-              key={index}
-               className="w-72 bg-white  rounded-xl shadow  hover:scale-105 transition-all duration-300 p-4">
-                <img
-                  src={product.Image[0]}
-                  alt={product.Name}
-                  className="w-full h-72 object-contain"
-                />
+         {filteredProducts.map((product) => {
+  return (
+    <NavLink
+      key={product.Id}
+      to={`/single-product/${product.Id}`}
+      className="text-decoration-none text-black"
+    >
+      <div className="w-72 bg-white rounded-xl shadow hover:scale-105 transition-all duration-300 p-4">
+        <img
+          src={product.Image[0]}
+          alt={product.Name}
+          className="w-full h-72 object-contain"
+        />
 
-                <h3 className="font-bold mt-2">{product.Name}</h3>
+        <h3 className="font-bold mt-2">{product.Name}</h3>
 
-                <div className="flex items-center gap-2">
-                  <p className="line-through font-bold">₹{product.Price+500}</p>
-                  <p className="text-lg text-green-600  ">₹{product.Price}</p>
-                </div>
-              </div>
-           </NavLink>
-            );
-          })}
+        <div className="flex items-center gap-2">
+          <p className="line-through font-bold">₹{product.Price + 500}</p>
+          <p className="text-lg text-green-600">₹{product.Price}</p>
+        </div>
+      </div>
+    </NavLink>
+  );
+})}
         </div>
       </div>
     </Layout>
