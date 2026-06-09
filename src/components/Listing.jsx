@@ -1,50 +1,50 @@
 import React from "react";
-import { products } from "../data_json.js";
+import { NavLink } from "react-router-dom";
 
-const Listing = ( { Productjson , title } ) => {
-
+const Listing = ({ Productjson, title }) => {
   return (
-    <div className="w-full p-4">
-      <h2 className="text-2xl sm:text-3xl font-bold text-center sm:text-left">
+    <div className="w-full px-4 py-6">
+      <h2 className="text-3xl font-bold text-center mb-10">
         {title}
       </h2>
 
-      <div className="flex flex-wrap justify-center sm:justify-evenly gap-6 mt-12">
-
-        {Productjson.map((product) => {
-          return (
-            <div
-              className="flex flex-col border w-full sm:w-80 md:w-86 h-auto shadow rounded-2xl items-center border-gray-50"
-              key={product.Id}
-            >
+      <div className="flex flex-wrap justify-evenly gap-6">
+        {Productjson.map((product) => (
+          <NavLink
+            key={product.Id}
+            to={`/single-product/${product.Id}`}
+            className="text-decoration-none text-black"
+          >
+            <div className="w-72 bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden">
               <img
                 src={product.Image[0]}
                 alt={product.Name}
-                className="h-72 sm:h-96 w-full sm:w-86 mb-3 cursor-pointer object-contain transition-all duration-200 hover:scale-95 mt-3"
+                className="h-72 w-full object-contain p-4"
                 onMouseEnter={(e) =>
-                  (e.currentTarget.src = product.Image[1])
+                  (e.currentTarget.src =
+                    product.Image[1] || product.Image[0])
                 }
                 onMouseLeave={(e) =>
                   (e.currentTarget.src = product.Image[0])
                 }
               />
 
-              <div className="font-semibold text-center text-xl sm:text-2xl p-4 m-0">
-                <p>{product.Name}</p>
+              <div className="p-4 text-center">
+                <h3 className="text-lg font-semibold">
+                  {product.Name}
+                </h3>
 
-                <p>₹{product.Price}</p>
+                <p className="text-green-600 font-bold text-xl mt-2">
+                  ₹{product.Price}
+                </p>
 
-                <div>
-                  <i className="fa-solid fa-star text-warning"></i>
-                  <i className="fa-solid fa-star text-warning"></i>
-                  <i className="fa-solid fa-star text-warning"></i>
-                  <i className="fa-solid fa-star text-warning"></i>
+                <div className="mt-2 text-yellow-400">
+                  ★★★★☆
                 </div>
               </div>
             </div>
-          );
-        })}
-
+          </NavLink>
+        ))}
       </div>
     </div>
   );

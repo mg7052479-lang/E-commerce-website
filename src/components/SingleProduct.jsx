@@ -15,28 +15,6 @@ const SingleProduct = () => {
     return <h1>Product Not Found</h1>;
   }
   const sugestedProduct = products.filter((sugproduct)=> sugproduct.Category === singleData.Category)
-
-  // const product = {
-  //   Id: 1,
-  //   Name: "Boat Airdopes 111",
-  //   Price: 1099,
-  //   Category: "Airdopes",
-  //   Image: [
-  //     "/assets/electronics/boAt Airdopes 111 1.webp",
-  //     "/assets/electronics/boAt Airdopes 111 2.webp",
-  //     "/assets/electronics/boAt Airdopes 111 3.webp",
-  //     "/assets/electronics/boAt Airdopes 111 4.webp",
-  //   ],
-  //   Count: 1,
-  //   Heading:
-  //     "boAt Airdopes 131 with upto 60 hours and ASAP Charge Bluetooth  (Active, True Wireless)",
-  //   Brand: "Boat",
-  //   Type: "Electronics",
-  //   Trending: true,
-  //   Rating: "4.3",
-  //   Description:
-  //     "Experience audio fun endlessly with the Airdopes 181 Pro TWS Earbuds. Tap your feet to your playlist on repeat as 100 hours of massive playtime has got your back",
-  // };
   return (
     <Layout>
       <div className="mt-24 flex justify-between gap-6 ">
@@ -91,7 +69,10 @@ const SingleProduct = () => {
         </div>
       </div>
       <div className="flex ">
-        <Listing Productjson={sugestedProduct} title={"Related Products"} />
+        <Listing
+        
+        Productjson={sugestedProduct}
+         title={"Related Products"} />
       </div>
     </Layout>
   );

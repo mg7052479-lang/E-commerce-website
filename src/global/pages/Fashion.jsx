@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Layout from "../../components/Layout";
 import { products } from "../../data_json.js";
-
+import { NavLink } from "react-router-dom";
+import SingleProduct from "../../components/SingleProduct.jsx";
 const Fashion = () => {
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([]);
@@ -149,37 +150,39 @@ const Fashion = () => {
 
           </div>
         </div>
+      <div className="flex flex-wrap mt-18 justify-evenly gap-6 flex-1">
+  {filteredProducts.map((product) => (
+    <NavLink
+      key={product.Id}
+      to={`/single-product/${product.Id}`}
+      className="text-decoration-none text-black"
+    >
+      <div
+        className="w-72 bg-white rounded-xl shadow-md hover:scale-105 transition-all duration-300 p-4"
+      >
+        <img
+          src={product.Image[0]}
+          alt={product.Name}
+          className="w-full h-72 object-contain"
+        />
 
-        <div className="flex flex-wrap mt-18 justify-evenly gap-6 flex-1">
+        <h3 className="font-bold mt-2">
+          {product.Heading}
+        </h3>
 
-          {filteredProducts.map((product) => (
-            <div
-              key={product.Id}
-              className="w-72 bg-white rounded-xl shadow-md hover:scale-105 transition-all duration-300 p-4"
-            >
-              <img
-                src={product.Image[0]}
-                alt={product.Name}
-                className="w-full h-72 object-contain"
-              />
+        <div className="flex items-center gap-2">
+          <p className="line-through font-bold">
+            ₹{product.Price + 500}
+          </p>
 
-              <h3 className="font-bold mt-2">
-                {product.Heading}
-              </h3>
-
-          <div className="flex items-center gap-2">
-              <p className="line-through font-bold">
-                ₹{product.Price + 500}
-              </p>
-              <p className="text-lg text-green-600  ">
-                ₹{product.Price}
-              </p>
-            </div>  
-          </div>
-
-          ))}
-
+          <p className="text-lg text-green-600">
+            ₹{product.Price}
+          </p>
         </div>
+      </div>
+    </NavLink>
+  ))}
+</div>
       </div>
     </Layout>
   );
