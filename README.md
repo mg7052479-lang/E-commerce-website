@@ -63,36 +63,7 @@ src/
 ```
 
 ---
-
-## ⚙️ Installation
-
-### Clone the repository
-
-```bash
-git clone https://github.com/yourusername/shopix.git
-```
-
-### Navigate to project folder
-
-```bash
-cd shopix
-```
-
-### Install dependencies
-
-```bash
-npm install
-```
-
-### Start development server
-
-```bash
-npm run dev
-```
-
----
-
-## 🎯 Future Improvements
+ements
 
 - Shopping Cart
 - Product Search
@@ -123,9 +94,9 @@ While building this project, I improved my understanding of:
 
 Mohammed
 
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/mg7052479-lang
 
-LinkedIn: https://linkedin.com/in/yourprofile
+LinkedIn: https://www.linkedin.com/in/md-ghouse-a731a23b1/
 
 ---
 
