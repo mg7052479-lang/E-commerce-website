@@ -6,12 +6,6 @@ A modern and responsive e-commerce web application built using React and Tailwin
 
 https://shopixvercelapp-shopix-store.vercel.app
 
-## 📸 Screenshots
-
-Add screenshots of your project here.
-
----
-
 ## ✨ Features
 
 - Responsive Design
