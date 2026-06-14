@@ -14,7 +14,7 @@ const SingleProduct = () => {
 
   const { cartProduct, setcartProduct } = useContext(productContext);
   const [ isAvailableToCart, setisAvailableToCart ] = useState(false);
-
+      
   const handleAddToCart = () => {
     const isAddedToCart = cartProduct.filter(
       (product) => product.id == singleData.i,
