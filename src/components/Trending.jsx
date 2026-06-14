@@ -1,5 +1,7 @@
 import React from 'react'
 import { products } from '../data_json.js';
+import { NavLink } from 'react-router-dom';
+import SingleProduct from './SingleProduct.jsx';
 
 const trendingProducts = products.filter(
   (product) => product.Trending
@@ -15,7 +17,8 @@ const Trending = () => {
 
         {trendingProducts.map((product) => {
           return (
-            <div
+           <NavLink to={`/single-product/${product.Id}`} key={product.Id} className='text-decoration-none text-black'>
+             <div
               key={product.Id}
               className='flex border w-106 h-36 shadow rounded-2xl border-gray-50 transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer'
             >
@@ -47,6 +50,7 @@ const Trending = () => {
               </div>
 
             </div>
+           </NavLink>
           )
         })}
 

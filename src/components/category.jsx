@@ -1,5 +1,7 @@
 import React from 'react'
 import { products } from '../data_json.js';
+import { NavLink } from 'react-router-dom';
+import SingleProduct from './SingleProduct.jsx';
 
 const Category = () => {
 
@@ -20,7 +22,8 @@ const Category = () => {
 
       {uniqueProducts.map((product) => (
 
-        <div
+      <NavLink to={`/single-product/${product.Id}`} className='text-decoration-none text-black'>
+          <div
           key={product.Id}
           className='w-60 sm:w-72 h-24 bg-gray-200 flex-shrink-0 shadow-md rounded-xl flex items-center px-4 gap-4 sm:gap-6'
         >
@@ -36,6 +39,7 @@ const Category = () => {
           </div>
 
         </div>
+      </NavLink>
 
       ))}
 

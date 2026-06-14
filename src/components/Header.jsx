@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Addtocart from './Addtocart'
 
 const Header = () => {
   return (
@@ -59,10 +60,12 @@ const Header = () => {
 
       <div className='flex gap-8 text-2xl text-white'>
 
-        <button className='hover:text-green-400 transition-all duration-300 hover:scale-110'>
+       <NavLink to={"/Addtocart"}>
+         <button className='hover:text-green-400  transition-all duration-300 hover:scale-110 '>
           <i className="fa-solid fa-cart-shopping"></i>
         </button>
 
+       </NavLink>
         <button className='hover:text-red-400 transition-all duration-300 hover:scale-110'>
           <i className="fa-solid fa-heart"></i>
         </button>
