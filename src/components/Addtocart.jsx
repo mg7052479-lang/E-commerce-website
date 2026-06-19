@@ -67,7 +67,7 @@ const Addtocart = () => {
 
   return (
     <Layout>
-      <div className="max-w-7xl mx-auto mt-24 px-4">
+      <div className="max-w-7xl mx-auto h-200 mt-24 px-4">
         <h1 className="text-3xl font-bold mb-8">
           Shopping Cart ({totalItems} Items)
         </h1>
@@ -76,7 +76,7 @@ const Addtocart = () => {
           {/* Cart Products */}
           <div className="lg:col-span-2">
             {cart.length === 0 ? (
-              <div className="border rounded-lg p-10 text-center bg-white">
+              <div className="border rounded-lg p-10 text-center mt-6 bg-white">
                 <h2 className="text-2xl font-semibold">
                   Your Cart is Empty 🛒
                 </h2>
