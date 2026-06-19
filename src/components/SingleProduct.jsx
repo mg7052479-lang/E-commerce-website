@@ -8,7 +8,6 @@ import { NavLink } from "react-router-dom";
 import Addtocart from "./Addtocart.jsx";
 import { useNavigate } from "react-router-dom";
 
-
 const SingleProduct = () => {
   const navigate = useNavigate();
   const relateProduct = products.filter(
@@ -17,8 +16,8 @@ const SingleProduct = () => {
   const { id } = useParams();
 
   const { cartProduct, setcartProduct } = useContext(productContext);
-  const [ isAvailableToCart, setisAvailableToCart ] = useState(false);
-      
+  const [isAvailableToCart, setisAvailableToCart] = useState(false);
+
   const handleAddToCart = () => {
     const isAddedToCart = cartProduct.filter(
       (product) => product.id == singleData.i,
@@ -38,15 +37,17 @@ const SingleProduct = () => {
   const sugestedProduct = products.filter(
     (sugproduct) => sugproduct.Category === singleData.Category,
   );
-  useEffect(()=> {
+  useEffect(() => {
     const isAddedToCart = cartProduct.filter(
       (product) => product.id == singleData.id,
     );
     if (isAddedToCart.length > 0) {
       setisAvailableToCart(true);
-    }  
-
-  },[cartProduct])
+    }
+    if(isAddedToCart.length === 0){
+   setisAvailableToCart(false);
+    }
+  }, [cartProduct, singleData]);
   return (
     <Layout>
       <div className="mt-24 flex justify-between gap-6 ">
@@ -89,27 +90,25 @@ const SingleProduct = () => {
               <p className="text-gray-600 ">{singleData.Description}</p>
             </div>
             <div className="flex gap-6 items-center ">
-         {isAvailableToCart ? (
-  <button
-    onClick={() => navigate("/Addtocart")}
-    className="bg-green-600 text-white px-4 py-2 rounded mt-6 hover:bg-green-700 transition-colors duration-300"
-  >
-    Go to Cart
-  </button>
-) : (
-  <button
-    onClick={handleAddToCart}
-    className="bg-green-600 text-white px-4 py-2 rounded mt-6 hover:bg-green-700 transition-colors duration-300"
-  >
-    Add to Cart
-  </button>
-)}
+              {isAvailableToCart ? (
+                <button
+                  onClick={() => navigate("/Addtocart")}
+                  className="bg-green-600 text-white px-4 py-2 rounded mt-6 hover:bg-green-700 transition-colors duration-300"
+                >
+                  Go to Cart
+                </button>
+              ) : (
+                <button
+                  onClick={handleAddToCart}
+                  className="bg-green-600 text-white px-4 py-2 rounded mt-6 hover:bg-green-700 transition-colors duration-300"
+                >
+                  Add to Cart
+                </button>
+              )}
 
-            
               <button className="bg-blue-600 text-white px-4 py-2 rounded mt-6 hover:bg-blue-700 transition-colors duration-300">
                 Buy Now
               </button>
-
             </div>
           </div>
         </div>
