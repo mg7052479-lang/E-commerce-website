@@ -56,13 +56,13 @@ const Addtocart = () => {
 
   return (
     <Layout>
-      <div className="max-w-7xl mx-auto px-4 py-6">
+      <div className="max-w-7xl mt-20 mx-auto h-200 px-4 py-6">
         <h1 className="text-3xl font-bold mb-6">
           Shopping Cart ({totalItems} Items)
         </h1>
 
         <div className="grid lg:grid-cols-3 gap-6">
-          {/* Products */}
+       
           <div className="lg:col-span-2">
             {cartProduct.length === 0 ? (
               <div className="bg-white border rounded-lg p-10 text-center">
@@ -76,13 +76,12 @@ const Addtocart = () => {
                   key={product.Id}
                   className="bg-white border rounded-lg p-4 mb-4 flex flex-col md:flex-row gap-6"
                 >
-                  {/* Product Image */}
+
                   <div className="flex flex-col items-center">
                     <img
   src={
     product.image ||
-    product.Image ||
-    "https://picsum.photos/200"
+    product.Image 
   }
   alt={product.Name}
   className="w-32 h-32 object-contain border"
@@ -117,7 +116,6 @@ const Addtocart = () => {
                     </div>
                   </div>
 
-                  {/* Product Details */}
                   <div className="flex-1">
                     <h2 className="text-lg font-semibold">
                       {product.Name}
@@ -162,7 +160,7 @@ const Addtocart = () => {
             )}
           </div>
 
-          {/* Price Details */}
+
           <div className="bg-white border rounded-lg p-6 h-fit">
             <h2 className="text-xl font-bold mb-4">
               PRICE DETAILS

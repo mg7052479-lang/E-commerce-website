@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { productContext } from "../App.jsx";
 import { NavLink } from "react-router-dom";
 import Addtocart from "./Addtocart.jsx";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; 
 
 const SingleProduct = () => {
   const navigate = useNavigate();
@@ -50,7 +50,7 @@ const SingleProduct = () => {
   }, [cartProduct, singleData]);
   return (
     <Layout>
-      <div className="mt-24 flex justify-between gap-6 ">
+      <div className="mt-22 flex justify-between gap-6 ">
         <div className="flex gap-4 w-1/2 p-4 m-6 mt-4 rounded-2xl border shadow-sm bg-white">
           <div className="flex flex-col justify-evenly p-2  gap-3">
             {singleData.Image.map((img, index) => (
@@ -58,7 +58,7 @@ const SingleProduct = () => {
                 key={index}
                 src={img}
                 alt=""
-                className="w-24 h-24 object-cover rounded-lg cursor-pointer border"
+                className="w-24 h-24 object-contain  rounded-lg cursor-pointer border"
               />
             ))}
           </div>
